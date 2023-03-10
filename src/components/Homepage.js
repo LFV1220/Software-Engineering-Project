@@ -2,7 +2,7 @@
 function Homepage() {
     return (
         <div>
-            <p>Test</p>
+            <p>Test (from HOMEPAGE component)</p>
         </div>
     )
 }

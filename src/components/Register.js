@@ -1,9 +1,26 @@
+import React, { useState } from 'react';
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase-config';
 
-function Register() {
+function Register({ setSignedIn }) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const Register = () => {
+        setSignedIn(true);
+        try {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(userCredential => {
+                    const user = userCredential.user
+                    console.log(user)
+                })
+        } catch (err) {
+            alert('Signup unsuccessful')
+        }
+    }
+
     return (
         <div>
             <Container>
@@ -14,14 +31,14 @@ function Register() {
                             <Card.Body>
                                 <div className="mb-3 mt-md-4">
                                     <h2 className="fw-bold mb-2 text-uppercase "></h2>
-                                    <p className=" mb-5">Please enter an email address and password!</p>
+                                    <p className=" mb-5">Please enter a valid email address and password.</p>
                                     <div className="mb-3">
                                         <Form>
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                                 <Form.Label className="text-center">
                                                     Email address
                                                 </Form.Label>
-                                                <Form.Control type="email" placeholder="Enter email" />
+                                                <Form.Control onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter email" />
                                             </Form.Group>
 
                                             <Form.Group
@@ -29,22 +46,19 @@ function Register() {
                                                 controlId="formBasicPassword"
                                             >
                                                 <Form.Label>Password</Form.Label>
-                                                <Form.Control type="password" placeholder="Password" />
+                                                <Form.Control onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" />
                                             </Form.Group>
                                             <Form.Group
                                                 className="mb-3"
                                                 controlId="formBasicCheckbox"
                                             >
-                                                <p className="small">
-                                                    <a className="text-primary" href="#!">
-                                                        Forgot password?
-                                                    </a>
-                                                </p>
                                             </Form.Group>
                                             <div className="d-grid">
-                                                <Button variant="primary" type="submit">
-                                                    Register
-                                                </Button>
+                                                <Link to='/'>
+                                                    <Button onClick={() => Register()} variant="primary" type="submit">
+                                                        Register
+                                                    </Button>
+                                                </Link>
                                             </div>
                                         </Form>
                                         <div className="mt-3">

@@ -1,20 +1,23 @@
 import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 
-function Header() {
+function Header({ isSignedIn, setSignedIn }) {
+    const signOut = () => setSignedIn(false);
+
     return (
         <Navbar className='navbar'>
             <Container>
                 {/* Logo here */}
-                <Navbar.Brand href="#home">Menu</Navbar.Brand>
-                <Navbar.Brand href="#home">Reservations</Navbar.Brand>
+                <Navbar.Brand href="">Menu</Navbar.Brand>
+                <Navbar.Brand href="">Reservations</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
 
                     {/* Authentication, check if isSignedIn */}
                     <Navbar.Text>
-                        {/* Signed in as: <a href="#login">Test</a> */}
-                        <a href="/Login">Sign In</a> or <a href="/Register">Register</a>
+                        {isSignedIn
+                            ? <div>Signed in as: <a href='/Menu'>Test</a></div>
+                            : <div><a href="/Login">Sign In</a> or <a href="/Register">Register</a></div>}
                     </Navbar.Text>
 
                 </Navbar.Collapse>

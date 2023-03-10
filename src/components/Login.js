@@ -1,10 +1,25 @@
+import React, { useState } from 'react';
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase-config';
 
-function Login() {
+function Login({ setSignedIn }) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
+    const Login = () => {
+        setSignedIn(true);
+        try {
+            signInWithEmailAndPassword(auth, email, password)
+                .then(userCredential => {
+                    const user = userCredential.user
+                    console.log(user)
+                })
+        } catch (err) {
+            alert('Login unsuccessful')
+        }
+    }
 
     return (
         <div>
@@ -23,7 +38,7 @@ function Login() {
                                                 <Form.Label className="text-center">
                                                     Email address
                                                 </Form.Label>
-                                                <Form.Control type="email" placeholder="Enter email" />
+                                                <Form.Control onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter email" />
                                             </Form.Group>
 
                                             <Form.Group
@@ -31,22 +46,19 @@ function Login() {
                                                 controlId="formBasicPassword"
                                             >
                                                 <Form.Label>Password</Form.Label>
-                                                <Form.Control type="password" placeholder="Password" />
+                                                <Form.Control onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" />
                                             </Form.Group>
                                             <Form.Group
                                                 className="mb-3"
                                                 controlId="formBasicCheckbox"
                                             >
-                                                <p className="small">
-                                                    <a className="text-primary" href="#!">
-                                                        Forgot password?
-                                                    </a>
-                                                </p>
                                             </Form.Group>
                                             <div className="d-grid">
-                                                <Button variant="primary" type="submit">
-                                                    Login
-                                                </Button>
+                                                <Link to='/'>
+                                                    <Button onClick={() => Login()} variant="primary" type="submit">
+                                                        Login
+                                                    </Button>
+                                                </Link>
                                             </div>
                                         </Form>
                                         <div className="mt-3">

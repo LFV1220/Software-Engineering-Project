@@ -13,6 +13,8 @@ import Login from './components/Login.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
+  const [isSignedIn, setSignedIn] = useState(false);
+
   return (
     <div>
       {
@@ -23,14 +25,14 @@ function App() {
         */
       }
       <Router>
-        <Header />
+        <Header isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
 
         <Routes>
           <Route exact path='/' element={<Homepage />} />
-          <Route path='/Menu' element={<Menu />} />
-          <Route path='/Reservations' element={<Reservations />} />
-          <Route path='/Login' element={<Login />} />
-          <Route path='/Register' element={<Register />} />
+          <Route path='/Menu' element={<Menu isSignedIn={isSignedIn} />} />
+          <Route path='/Reservations' element={<Reservations isSignedIn={isSignedIn} />} />
+          <Route path='/Login' element={<Login setSignedIn={setSignedIn} />} />
+          <Route path='/Register' element={<Register setSignedIn={setSignedIn} />} />
         </Routes>
       </Router>
     </div>
