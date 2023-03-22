@@ -4,21 +4,26 @@ import { Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase-config';
 
-function Login({ setSignedIn }) {
+function Login({ setSignedIn, setUser }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const Login = () => {
-        setSignedIn(true);
         try {
             signInWithEmailAndPassword(auth, email, password)
                 .then(userCredential => {
                     const user = userCredential.user
                     console.log(user)
+                    setSignedIn(true);
                 })
         } catch (err) {
             alert('Login unsuccessful')
         }
+    }
+
+    const handleEmail = (val) => {
+        setEmail(val);
+        setUser(val);
     }
 
     return (
@@ -38,7 +43,7 @@ function Login({ setSignedIn }) {
                                                 <Form.Label className="text-center">
                                                     Email address
                                                 </Form.Label>
-                                                <Form.Control onChange={e => setEmail(e.target.value)} type="email" placeholder="Enter email" />
+                                                <Form.Control onChange={e => handleEmail(e.target.value)} type="email" placeholder="Enter email" />
                                             </Form.Group>
 
                                             <Form.Group

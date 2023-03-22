@@ -1,8 +1,12 @@
+import React from 'react';
 
 function Menu({ isSignedIn }) {
     return (
         <div>
-            <p>Test (from MENU component)</p>
+            {isSignedIn
+                ? <p>Signed In</p>
+                : <p>Not signed in</p>}
+            <p>Test (from MENU component) {isSignedIn}</p>
         </div>
     )
 }

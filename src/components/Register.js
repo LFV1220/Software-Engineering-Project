@@ -9,12 +9,12 @@ function Register({ setSignedIn }) {
     const [password, setPassword] = useState('');
 
     const Register = () => {
-        setSignedIn(true);
         try {
             createUserWithEmailAndPassword(auth, email, password)
                 .then(userCredential => {
                     const user = userCredential.user
                     console.log(user)
+                    setSignedIn(true);
                 })
         } catch (err) {
             alert('Signup unsuccessful')
