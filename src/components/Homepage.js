@@ -15,7 +15,7 @@ function Homepage() {
         <div>
             <div className='hero-page'>
                 <div className='hero-content'>
-                    <h1>Restaurant Name</h1>
+                    <h1>SiteBite</h1>
                 </div>
             </div>
             <div className='homepage'>
@@ -92,7 +92,7 @@ function Homepage() {
                                 <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
                                     <h6 className='text-uppercase fw-bold mb-4'>
                                         <FaGem className="me-3" />
-                                        Company name
+                                        SiteBite
                                     </h6>
                                     <p>
                                         Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
@@ -145,7 +145,7 @@ function Homepage() {
                         </MDBContainer>
                     </section>
                     <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                        Restaurant Name © 2023
+                        SiteBite © 2023
                     </div>
                 </MDBFooter>
             </div>

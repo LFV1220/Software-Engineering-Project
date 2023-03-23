@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Navbar, NavbarBrand } from 'react-bootstrap';
 import { BsBag } from "react-icons/bs";
 import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import logo from './SE_Logo.png';
 
 
 function Header({ isSignedIn, setSignedIn, user }) {
@@ -13,7 +14,7 @@ function Header({ isSignedIn, setSignedIn, user }) {
             <Container>
                 <Link to="/">
                     <Navbar.Brand>
-                        <img src="./SE_Logo" />
+                        <img src={logo} width='35px' />
                     </Navbar.Brand>
                 </Link>
                 <Link to="/Menu" style={{ textDecoration: 'none' }}>
