@@ -18,10 +18,10 @@ function Header({ isSignedIn, setSignedIn, user }) {
                     </Navbar.Brand>
                 </Link>
                 <Link to="/Menu" style={{ textDecoration: 'none' }}>
-                    <Navbar.Brand>Menu</Navbar.Brand>
+                    <Navbar.Brand className='nav-text'>Menu</Navbar.Brand>
                 </Link>
                 <Link to="/Reservations" style={{ textDecoration: 'none' }}>
-                    <Navbar.Brand>Reservations</Navbar.Brand>
+                    <Navbar.Brand className='nav-text'>Reservations</Navbar.Brand>
                 </Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
@@ -37,7 +37,7 @@ function Header({ isSignedIn, setSignedIn, user }) {
                                     </MDBDropdownMenu>
                                 </MDBDropdown>
                             </div>
-                            : <div><a href="/Login">Sign In</a> or <a href="/Register">Register</a></div>}
+                            : <div className='nav-text'><a href="/Login">Sign In</a> or <a href="/Register">Register</a></div>}
                     </Navbar.Text>
                     <NavbarBrand></NavbarBrand>
                     {isSignedIn
