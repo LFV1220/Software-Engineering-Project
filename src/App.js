@@ -16,6 +16,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   const [isSignedIn, setSignedIn] = useState(false);
   const [user, setUser] = useState('');
+  const [cart, setCart] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [reservations, setReservations] = useState([]);
 
   return (
     <div>
@@ -36,9 +39,9 @@ function App() {
           <Route path='/Login' element={<Login setSignedIn={setSignedIn} setUser={setUser} />} />
           <Route path='/Register' element={<Register setSignedIn={setSignedIn} />} />
 
-          <Route path='/Menu' element={<Menu isSignedIn={isSignedIn} />} />
+          <Route path='/Menu' element={<Menu isSignedIn={isSignedIn} setCart={setCart} />} />
           <Route path='/Reservations' element={<Reservations isSignedIn={isSignedIn} />} />
-          <Route path='/Cart' element={<Cart />} />
+          <Route path='/Cart' element={<Cart cart={cart} setCart={setCart} />} />
 
         </Routes>
       </Router>

@@ -33,7 +33,7 @@ function Header({ isSignedIn, setSignedIn, user }) {
                                     <MDBDropdownMenu>
                                         <MDBDropdownItem link>Order History</MDBDropdownItem>
                                         <MDBDropdownItem link>Reservations</MDBDropdownItem>
-                                        <MDBDropdownItem onClick={() => signOut()}>Sign Out</MDBDropdownItem>
+                                        <MDBDropdownItem onClick={signOut}>Sign Out</MDBDropdownItem>
                                     </MDBDropdownMenu>
                                 </MDBDropdown>
                             </div>
