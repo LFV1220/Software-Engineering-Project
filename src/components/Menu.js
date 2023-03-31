@@ -1,37 +1,16 @@
 import React, { useState } from 'react';
+import {
+    MDBCard,
+    MDBCardBody,
+    MDBCardTitle,
+    MDBCardText,
+    MDBCardImage,
+    MDBBtn
+} from 'mdb-react-ui-kit';
 import items from './menuData.js';
 
 function Menu({ isSignedIn }) {
     const [menuItems, setMenuItems] = useState(items)
-
-    // redoing this 
-    // const filterItems = (category) => {
-    //     if (category === 'all') {
-    //         setMenuItems(items)
-    //         return
-    //     }
-    //     const newItems = items.filter((item) => item.category === category)
-    //     setMenuItems(newItems)
-    // }
-
-    // const Categories = ({ categories, filterItems }) => {
-    //     return (
-    //         <div className="btn-container">
-    //             {categories.map((category, index) => {
-    //                 return (
-    //                     <button
-    //                         type="button"
-    //                         className="filter-btn"
-    //                         key={index}
-    //                         onClick={() => filterItems(category)}
-    //                     >
-    //                         {category}
-    //                     </button>
-    //                 )
-    //             })}
-    //         </div>
-    //     )
-    // }
 
     // const menu = ({ items }) => {
     //     return (
@@ -58,40 +37,78 @@ function Menu({ isSignedIn }) {
     // new functions (rework)
     // all categories
 
-    // breakfast category
-    function breakfastCategory() {
-        let newMenuItems
-        for (let i = 0; i < menuItems.length; i++) {
-            if (items[i].category === "breakfast") {
-                newMenuItems.push(items[i])
+    // change category
+    function handleCategory(categoryType) {
+        let newMenuItems = []
+
+        // breakfast category
+        if (categoryType === "breakfast") {
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].category === "breakfast") {
+                    newMenuItems.push(items[i])
+                }
             }
         }
+        // lunch category
+        else if (categoryType === "lunch") {
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].category === "lunch") {
+                    newMenuItems.push(items[i])
+                }
+            }
+        }
+        // dinner category
+        else if (categoryType === "dinner") {
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].category === "dinner") {
+                    newMenuItems.push(items[i])
+                }
+            }
+        }
+        else {
+            setMenuItems(items)
+            return
+        }
+
+        setMenuItems(newMenuItems)
     }
 
-    // lunch category
 
-    // dinner category
-
-
+    // menu items
+    function handleMenuItems(menuItems) {
+        return (
+            <div className="card-container">
+                {menuItems.map((menuItem) => (
+                    <MDBCard key={menuItem.id} className="menu-card">
+                        <MDBCardImage className="card-image" src={menuItem.img} position='top' alt={menuItem.title} />
+                        <MDBCardBody>
+                            <MDBCardTitle className="card-title">{menuItem.title}</MDBCardTitle>
+                            <MDBCardText className="card-desc">{menuItem.desc}</MDBCardText>
+                            {isSignedIn
+                                ? <MDBBtn className="card-btn" href='#'>Add to Cart</MDBBtn>
+                                : null}
+                        </MDBCardBody>
+                    </MDBCard>
+                ))}
+            </div>
+        );
+    }
 
     return (
-        <section className="menu section">
+        <section className="menu-section">
             <div className="title">
-                <h2>our menu</h2>
+                <h2>Restaurant Menu</h2>
                 <div className="underline"></div>
             </div>
             <div className="categories">
-                <button>All</button>
-                <button>Breakfast</button>
-                <button>Lunch</button>
-                <button>Dinner</button>
+                <button className="category" onClick={() => handleCategory("all")}>All</button>
+                <button className="category" onClick={() => handleCategory("breakfast")}>Breakfast</button>
+                <button className="category" onClick={() => handleCategory("lunch")}>Lunch</button>
+                <button className="category" onClick={() => handleCategory("dinner")}>Dinner</button>
             </div>
             <div className="menu">
-
+                {handleMenuItems(menuItems)}
             </div>
-            {/* <Categories categories={categories} filterItems={filterItems} />
-            <menu items={menuItems} />
-            {() => menu(menuItems)} */}
         </section>
     )
 }

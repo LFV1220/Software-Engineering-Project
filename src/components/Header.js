@@ -29,7 +29,7 @@ function Header({ isSignedIn, setSignedIn, user }) {
                         {isSignedIn
                             ? <div>
                                 <MDBDropdown>
-                                    <MDBDropdownToggle color='link'>{user}</MDBDropdownToggle>
+                                    <MDBDropdownToggle color='green'>{user}</MDBDropdownToggle>
                                     <MDBDropdownMenu>
                                         <MDBDropdownItem link>Order History</MDBDropdownItem>
                                         <MDBDropdownItem link>Reservations</MDBDropdownItem>
