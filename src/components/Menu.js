@@ -9,7 +9,7 @@ import {
 } from 'mdb-react-ui-kit';
 import items from './menuData.js';
 
-function Menu({ isSignedIn, setCart }) {
+function Menu({ isSignedIn, cart, setCart }) {
     const [menuItems, setMenuItems] = useState(items)
 
     // change category
@@ -48,6 +48,13 @@ function Menu({ isSignedIn, setCart }) {
         setMenuItems(newMenuItems)
     }
 
+    // add menu item to cart 
+    function addToCart(menuItem) {
+        setCart([...cart, menuItem])
+
+        console.log("menu item added to cart, current cart: ")
+        console.log(cart)
+    }
 
     // menu items
     function handleMenuItems(menuItems) {
@@ -60,12 +67,13 @@ function Menu({ isSignedIn, setCart }) {
                             <MDBCardTitle className="card-title">{menuItem.title}</MDBCardTitle>
                             <MDBCardText className="card-desc">{menuItem.desc}</MDBCardText>
                             {isSignedIn
-                                ? <MDBBtn className="card-btn">Add to Cart</MDBBtn>
+                                ? <MDBBtn className="card-btn" onClick={() => addToCart(menuItem)}>Add to Cart</MDBBtn>
                                 : null}
                         </MDBCardBody>
                     </MDBCard>
-                ))}
-            </div>
+                ))
+                }
+            </div >
         );
     }
 

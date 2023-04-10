@@ -7,7 +7,7 @@ import {
     MDBRow,
     MDBCol,
 } from 'mdb-react-ui-kit';
-import { GrFacebookOption, GrTwitter, GrGoogle, GrInstagram, GrLinkedin, GrGithub, GrMail } from "react-icons/gr";
+import { GrFacebookOption, GrTwitter, GrGoogle, GrInstagram, GrMail } from "react-icons/gr";
 import { FaGem, FaHome, FaPhoneAlt, FaPrint } from "react-icons/fa";
 
 function Homepage() {
@@ -37,13 +37,13 @@ function Homepage() {
                         <MDBCarouselItem
                             className='w-100 d-block'
                             itemId={1}
-                            src='https://mdbootstrap.com/img/new/slides/041.jpg'
+                            src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
                             alt='...'
                         />
                         <MDBCarouselItem
                             className='w-100 d-block'
                             itemId={2}
-                            src='https://mdbootstrap.com/img/new/slides/042.jpg'
+                            src='https://assets3.thrillist.com/v1/image/3130793/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70'
                             alt='...'
                         />
                         <MDBCarouselItem
@@ -77,12 +77,6 @@ function Homepage() {
                             <a href='' className='me-4 text-reset'>
                                 <GrInstagram />
                             </a>
-                            <a href='' className='me-4 text-reset'>
-                                <GrLinkedin />
-                            </a>
-                            <a href='' className='me-4 text-reset'>
-                                <GrGithub />
-                            </a>
                         </div>
                     </section>
 
@@ -97,30 +91,6 @@ function Homepage() {
                                     <p>
                                         Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
                                         consectetur adipisicing elit.
-                                    </p>
-                                </MDBCol>
-
-                                <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-                                    <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
-                                    <p>
-                                        <a href='#!' className='text-reset'>
-                                            Pricing
-                                        </a>
-                                    </p>
-                                    <p>
-                                        <a href='#!' className='text-reset'>
-                                            Settings
-                                        </a>
-                                    </p>
-                                    <p>
-                                        <a href='#!' className='text-reset'>
-                                            Orders
-                                        </a>
-                                    </p>
-                                    <p>
-                                        <a href='#!' className='text-reset'>
-                                            Help
-                                        </a>
                                     </p>
                                 </MDBCol>
 

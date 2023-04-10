@@ -6,18 +6,18 @@ import {
     MDBCardImage,
     MDBCol,
     MDBContainer,
-    MDBIcon,
     MDBInput,
     MDBRow,
     MDBTypography,
 } from "mdb-react-ui-kit";
+import { CiSquareRemove } from "react-icons/ci";
 
-export default function Cart({ cart, setCart }) {
+export default function Cart({ cart, setCart, setOrders }) {
 
     function cartItem(cart) {
         return (
             <div>
-                {cart.map((cartItem) => (
+                {cart.map((cartItem, index) => (
                     <MDBCard className="rounded-3 mb-4">
                         <MDBCardBody className="p-4">
                             <MDBRow className="justify-content-between align-items-center">
@@ -31,13 +31,6 @@ export default function Cart({ cart, setCart }) {
                                 </MDBCol>
                                 <MDBCol md="3" lg="3" xl="2"
                                     className="d-flex align-items-center justify-content-around">
-                                    <MDBBtn color="link" className="px-2">
-                                        <MDBIcon fas icon="minus" />
-                                    </MDBBtn>
-
-                                    <MDBBtn color="link" className="px-2">
-                                        <MDBIcon fas icon="plus" />
-                                    </MDBBtn>
                                 </MDBCol>
                                 <MDBCol md="3" lg="2" xl="2" className="offset-lg-1">
                                     <MDBTypography tag="h5" className="mb-0">
@@ -45,9 +38,9 @@ export default function Cart({ cart, setCart }) {
                                     </MDBTypography>
                                 </MDBCol>
                                 <MDBCol md="1" lg="1" xl="1" className="text-end">
-                                    <a href="#!" className="text-danger">
-                                        <MDBIcon fas icon="trash text-danger" size="lg" />
-                                    </a>
+                                    <button onClick={() => removeFromCart(index)}>
+                                        <CiSquareRemove />
+                                    </button>
                                 </MDBCol>
                             </MDBRow>
                         </MDBCardBody>
@@ -55,6 +48,14 @@ export default function Cart({ cart, setCart }) {
                 ))}
             </div>
         )
+    }
+
+    // removes menu item from cart
+    function removeFromCart(index) {
+        const newCart = [...cart];
+        newCart.splice(index, 1);
+        setCart(newCart);
+        console.log(newCart);
     }
 
     function handleCheckout() {
@@ -71,7 +72,8 @@ export default function Cart({ cart, setCart }) {
                                 Shopping Cart
                             </MDBTypography>
                         </div>
-                        {cart.size > 0
+                        {cartItem(cart)}
+                        {cart.length > 0
                             ? <div>
                                 <MDBCard className="mb-4">
                                     <MDBCardBody className="p-4 d-flex flex-row">
