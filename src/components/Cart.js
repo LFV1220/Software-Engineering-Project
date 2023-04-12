@@ -12,7 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import { CiSquareRemove } from "react-icons/ci";
 
-export default function Cart({ cart, setCart, setOrders }) {
+export default function Cart({ cart, setCart, orders, setOrders }) {
 
     function cartItem(cart) {
         return (
@@ -59,7 +59,17 @@ export default function Cart({ cart, setCart, setOrders }) {
     }
 
     function handleCheckout() {
+        const order = {
+            id: orders.length + 1, // unique id for each order
+            items: cart, // array of items in the order
+            totalPrice: cart.reduce((acc, item) => acc + item.price, 0), // total price of the order
+            date: new Date().toLocaleString(), // date and time the order was placed
+        };
 
+        setOrders([...orders, order]);
+        setCart([]); // clear the cart
+        alert("Order placed successfully!");
+        console.log(JSON.stringify(orders));
     }
 
     return (
@@ -84,7 +94,7 @@ export default function Cart({ cart, setCart, setOrders }) {
                                 <MDBCard>
                                     <MDBCardBody>
                                         <MDBBtn className="ms-3" color="warning" block size="lg" onClick={handleCheckout}>
-                                            Apply
+                                            Checkout
                                         </MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>

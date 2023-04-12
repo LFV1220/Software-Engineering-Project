@@ -51,9 +51,7 @@ function Menu({ isSignedIn, cart, setCart }) {
     // add menu item to cart 
     function addToCart(menuItem) {
         setCart([...cart, menuItem])
-
-        console.log("menu item added to cart, current cart: ")
-        console.log(cart)
+        alert(`Added ${menuItem.title} to your cart.`)
     }
 
     // menu items

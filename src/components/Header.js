@@ -31,8 +31,9 @@ function Header({ isSignedIn, setSignedIn, user }) {
                                 <MDBDropdown>
                                     <MDBDropdownToggle color='green'>{user}</MDBDropdownToggle>
                                     <MDBDropdownMenu>
-                                        <MDBDropdownItem link>Order History</MDBDropdownItem>
-                                        <MDBDropdownItem link>Reservations</MDBDropdownItem>
+                                        <MDBDropdownItem link><Link to='/OrderHistory'>Order History</Link></MDBDropdownItem>
+
+                                        {/* <MDBDropdownItem link>Reservations</MDBDropdownItem> */}
                                         <MDBDropdownItem link><a href='/'>Sign Out</a></MDBDropdownItem>
 
                                     </MDBDropdownMenu>
