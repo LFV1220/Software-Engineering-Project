@@ -9,33 +9,8 @@ import {
 } from 'mdb-react-ui-kit';
 import items from './menuData.js';
 
-function Menu({ isSignedIn }) {
+function Menu({ isSignedIn, cart, setCart }) {
     const [menuItems, setMenuItems] = useState(items)
-
-    // const menu = ({ items }) => {
-    //     return (
-    //         <div className="section-center">
-    //             {items.map((menuItem) => {
-    //                 const { id, title, img, price, desc } = menuItem
-    //                 return (
-    //                     <article key={id} className="menu-item">
-    //                         <img src={img} alt={title} className="photo" />
-    //                         <div className="item-info">
-    //                             <header>
-    //                                 <h4>{title}</h4>
-    //                                 <h4 className="price">N{price}</h4>
-    //                             </header>
-    //                             <p className="item-text">{desc}</p>
-    //                         </div>
-    //                     </article>
-    //                 )
-    //             })}
-    //         </div>
-    //     )
-    // }
-
-    // new functions (rework)
-    // all categories
 
     // change category
     function handleCategory(categoryType) {
@@ -73,6 +48,11 @@ function Menu({ isSignedIn }) {
         setMenuItems(newMenuItems)
     }
 
+    // add menu item to cart 
+    function addToCart(menuItem) {
+        setCart([...cart, menuItem])
+        alert(`Added ${menuItem.title} to your cart.`)
+    }
 
     // menu items
     function handleMenuItems(menuItems) {
@@ -85,12 +65,13 @@ function Menu({ isSignedIn }) {
                             <MDBCardTitle className="card-title">{menuItem.title}</MDBCardTitle>
                             <MDBCardText className="card-desc">{menuItem.desc}</MDBCardText>
                             {isSignedIn
-                                ? <MDBBtn className="card-btn" href='#'>Add to Cart</MDBBtn>
+                                ? <MDBBtn className="card-btn" onClick={() => addToCart(menuItem)}>Add to Cart</MDBBtn>
                                 : null}
                         </MDBCardBody>
                     </MDBCard>
-                ))}
-            </div>
+                ))
+                }
+            </div >
         );
     }
 

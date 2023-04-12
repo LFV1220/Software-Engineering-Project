@@ -12,10 +12,18 @@ import Register from './components/Register.js';
 import Login from './components/Login.js';
 import Cart from './components/Cart.js';
 import 'bootstrap/dist/css/bootstrap.css';
+import items from './components/menuData.js';
+import OrderHistory from './components/OrderHistory.js';
 
 function App() {
-  const [isSignedIn, setSignedIn] = useState(false);
+  const [isSignedIn, setSignedIn] = useState(true);
   const [user, setUser] = useState('');
+  const [cart, setCart] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [reservations, setReservations] = useState([]);
+
+  // testing cart by having all menu items in, remove when finished testing
+  // change isSignedIn to false when done testing (since authentication works)
 
   return (
     <div>
@@ -36,9 +44,11 @@ function App() {
           <Route path='/Login' element={<Login setSignedIn={setSignedIn} setUser={setUser} />} />
           <Route path='/Register' element={<Register setSignedIn={setSignedIn} />} />
 
-          <Route path='/Menu' element={<Menu isSignedIn={isSignedIn} />} />
+          <Route path='/OrderHistory' element={<OrderHistory orders={orders} setOrders={setOrders} />} />
+
+          <Route path='/Menu' element={<Menu isSignedIn={isSignedIn} cart={cart} setCart={setCart} />} />
           <Route path='/Reservations' element={<Reservations isSignedIn={isSignedIn} />} />
-          <Route path='/Cart' element={<Cart />} />
+          <Route path='/Cart' element={<Cart cart={cart} setCart={setCart} orders={orders} setOrders={setOrders} />} />
 
         </Routes>
       </Router>

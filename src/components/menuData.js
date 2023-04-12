@@ -28,4 +28,4 @@ const menu = [
     },
 ]
 
-export default menu
+export default menu;
