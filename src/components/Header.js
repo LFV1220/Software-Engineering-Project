@@ -18,10 +18,10 @@ function Header({ isSignedIn, setSignedIn, user }) {
                     </Navbar.Brand>
                 </Link>
                 <Link to="/Menu" style={{ textDecoration: 'none' }}>
-                    <Navbar.Brand className='nav-text'>Menu</Navbar.Brand>
+                    <Navbar.Brand className='nav-text'>MENU</Navbar.Brand>
                 </Link>
                 <Link to="/Reservations" style={{ textDecoration: 'none' }}>
-                    <Navbar.Brand className='nav-text'>Reservations</Navbar.Brand>
+                    <Navbar.Brand className='nav-text'>RESERVATIONS</Navbar.Brand>
                 </Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
