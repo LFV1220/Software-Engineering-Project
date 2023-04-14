@@ -44,7 +44,7 @@ function App() {
           <Route path='/Login' element={<Login setSignedIn={setSignedIn} setUser={setUser} />} />
           <Route path='/Register' element={<Register setSignedIn={setSignedIn} />} />
 
-          <Route path='/OrderHistory' element={<OrderHistory orders={orders} setOrders={setOrders} />} />
+          <Route path='/OrderHistory' element={<OrderHistory orders={orders} />} />
 
           <Route path='/Menu' element={<Menu isSignedIn={isSignedIn} cart={cart} setCart={setCart} />} />
           <Route path='/Reservations' element={<Reservations isSignedIn={isSignedIn} />} />

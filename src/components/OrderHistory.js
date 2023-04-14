@@ -29,13 +29,11 @@ function OrderHistory({ orders, setOrders }) {
                                     <p className="lead fw-normal mb-2">Total Price: ${order.totalPrice}</p>
                                 </MDBCol>
                             </MDBRow>
-                            {/* TODO: DISPLAY EACH ORDER ITEM */}
-                            {/* {orders.items.map((orderItem, index) => (
-                                <p>{orderItem.title}</p>
-                            ))} */}
-                            <MDBRow className="justify-content-between align-items-center">
+                            <MDBRow></MDBRow>
+                            {displayOrderItem(order)}
+                            {/* <MDBRow className="justify-content-between align-items-center">
 
-                            </MDBRow>
+                            </MDBRow> */}
                         </MDBCardBody>
                     </MDBCard>
                 ))}
@@ -43,8 +41,34 @@ function OrderHistory({ orders, setOrders }) {
         )
     }
 
-    function displayOrderItem() {
-
+    // TODO: FINISH THIS FUNCTION TO DISPLAY EACH ORDER ITEM(S)
+    function displayOrderItem(order) {
+        return (
+            <div>
+                {order.items.map((item, index) => (
+                    <div>
+                        <hr />
+                        <MDBRow>
+                            <MDBCol md="2" lg="2" xl="2">
+                                <MDBCardImage className="rounded-3" fluid
+                                    src={item.img}
+                                    alt={item.title} />
+                            </MDBCol>
+                            <MDBCol md="3" lg="3" xl="3">
+                                <p className="lead fw-normal mb-2">{item.title}</p>
+                            </MDBCol>
+                            <MDBCol></MDBCol>
+                            <MDBCol></MDBCol>
+                            <MDBCol md="3" lg="2" xl="2" className="offset-lg-1">
+                                <MDBTypography tag="h5" className="mb-0">
+                                    ${item.price}
+                                </MDBTypography>
+                            </MDBCol>
+                        </MDBRow>
+                    </div>
+                ))}
+            </div>
+        )
     }
 
     return (
