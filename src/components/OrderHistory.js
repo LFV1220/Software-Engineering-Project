@@ -11,7 +11,7 @@ import {
     MDBTypography,
 } from "mdb-react-ui-kit";
 
-function OrderHistory({ orders, setOrders }) {
+function OrderHistory({ orders }) {
     function displayOrders(orders) {
         return (
             <div>
@@ -31,9 +31,6 @@ function OrderHistory({ orders, setOrders }) {
                             </MDBRow>
                             <MDBRow></MDBRow>
                             {displayOrderItem(order)}
-                            {/* <MDBRow className="justify-content-between align-items-center">
-
-                            </MDBRow> */}
                         </MDBCardBody>
                     </MDBCard>
                 ))}
@@ -41,7 +38,6 @@ function OrderHistory({ orders, setOrders }) {
         )
     }
 
-    // TODO: FINISH THIS FUNCTION TO DISPLAY EACH ORDER ITEM(S)
     function displayOrderItem(order) {
         return (
             <div>
