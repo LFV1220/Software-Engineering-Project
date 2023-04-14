@@ -16,14 +16,11 @@ import items from './components/menuData.js';
 import OrderHistory from './components/OrderHistory.js';
 
 function App() {
-  const [isSignedIn, setSignedIn] = useState(true);
+  const [isSignedIn, setSignedIn] = useState(false);
   const [user, setUser] = useState('');
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
   const [reservations, setReservations] = useState([]);
-
-  // testing cart by having all menu items in, remove when finished testing
-  // change isSignedIn to false when done testing (since authentication works)
 
   return (
     <div>
