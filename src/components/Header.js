@@ -18,10 +18,10 @@ function Header({ isSignedIn, setSignedIn, user }) {
                     </Navbar.Brand>
                 </Link>
                 <Link to="/Menu" style={{ textDecoration: 'none' }}>
-                    <Navbar.Brand className='nav-text'>MENU</Navbar.Brand>
+                    <Navbar.Brand className='nav-text' style={{ color: 'white' }}>Menu</Navbar.Brand>
                 </Link>
                 <Link to="/Reservations" style={{ textDecoration: 'none' }}>
-                    <Navbar.Brand className='nav-text'>RESERVATIONS</Navbar.Brand>
+                    <Navbar.Brand className='nav-text' style={{ color: 'white' }}>Reservations</Navbar.Brand>
                 </Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
@@ -29,7 +29,7 @@ function Header({ isSignedIn, setSignedIn, user }) {
                         {isSignedIn
                             ? <div>
                                 <MDBDropdown>
-                                    <MDBDropdownToggle color='green'>{user}</MDBDropdownToggle>
+                                    <MDBDropdownToggle color='white'>{user}</MDBDropdownToggle>
                                     <MDBDropdownMenu>
                                         <MDBDropdownItem link><Link to='/OrderHistory'>Order History</Link></MDBDropdownItem>
 
@@ -39,7 +39,7 @@ function Header({ isSignedIn, setSignedIn, user }) {
                                     </MDBDropdownMenu>
                                 </MDBDropdown>
                             </div>
-                            : <div className='nav-text'><a href="/Login">Sign In</a> or <a href="/Register">Register</a></div>}
+                            : <div className='nav-text'><a href="/Login" style={{ color: 'white' }}>Sign In</a>  <a style={{ color: 'white' }}> or </a><a href="/Register" style={{ color: 'white' }}>Register</a></div>}
                     </Navbar.Text>
                     <NavbarBrand></NavbarBrand>
                     {isSignedIn

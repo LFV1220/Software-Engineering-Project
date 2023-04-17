@@ -57,6 +57,7 @@ function Menu({ isSignedIn, cart, setCart }) {
     // menu items
     function handleMenuItems(menuItems) {
         return (
+            
             <div className="card-container">
                 {menuItems.map((menuItem) => (
                     <MDBCard key={menuItem.id} className="menu-card">
@@ -76,9 +77,10 @@ function Menu({ isSignedIn, cart, setCart }) {
     }
 
     return (
+        <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
         <section className="menu-section">
             <div className="title">
-                <h2>Restaurant Menu</h2>
+                <h2 style={{ color: 'white' }}>Restaurant Menu</h2>
                 <div className="underline"></div>
             </div>
             <div className="categories">
@@ -91,6 +93,7 @@ function Menu({ isSignedIn, cart, setCart }) {
                 {handleMenuItems(menuItems)}
             </div>
         </section>
+        </div>
     )
 }
 

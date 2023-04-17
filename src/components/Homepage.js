@@ -22,15 +22,13 @@ function Homepage() {
                 <div className='about-section'>
                     {/* add about section here */}
                     <h1 style={{ textAlign: 'center' }} >About Us</h1>
-                    <p>This restaurant is a great choice for people who love to eat delicious meals throughout the day. From early morning to late at night, they serve breakfast, lunch, and dinner with a wide range of menu options to suit any taste and dietary preference.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida sem et ante interdum, in dignissim dui suscipit. Mauris id nibh risus. In non magna nulla. Maecenas quis ultrices turpis. Ut velit nulla, accumsan sed vehicula ut, scelerisque nec nunc. Sed tempor finibus sagittis. Mauris ultrices a urna ut cursus. Mauris non ex enim.
 
-For breakfast, they offer a variety of dishes such as pancakes, waffles, omelets, bagels, and breakfast burritos. Customers can also enjoy a cup of freshly brewed coffee, tea, or a refreshing fruit juice to start their day off right.
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed cursus nibh sed mollis fringilla. Integer sed aliquet felis. Cras lobortis erat mauris, eu lacinia tortor aliquam sed. Proin blandit egestas eros vitae euismod. Nullam sodales quam suscipit eros aliquet, sed scelerisque sapien rhoncus. Vivamus id erat augue. Phasellus eu consequat ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras sem sem, gravida sed dignissim sed, facilisis sit amet mauris. Nam finibus diam elit, ac imperdiet ante aliquam at. Pellentesque convallis ligula nec augue rutrum, in tristique magna interdum.</p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida sem et ante interdum, in dignissim dui suscipit. Mauris id nibh risus. In non magna nulla. Maecenas quis ultrices turpis. Ut velit nulla, accumsan sed vehicula ut, scelerisque nec nunc. Sed tempor finibus sagittis. Mauris ultrices a urna ut cursus. Mauris non ex enim.
 
-For lunch, the restaurant has a diverse selection of sandwiches, soups, salads, and wraps, all made with the freshest ingredients. There are also vegetarian and vegan options available for those with specific dietary needs.
-
-At dinnertime, the restaurant offers an even wider range of menu options including seafood, steak, pasta, and poultry dishes. The restaurant also has a selection of appetizers, sides, and desserts to complement any meal.
-
-In addition to the great food, the restaurant provides a cozy and inviting atmosphere where customers can relax and enjoy their meal. The staff is friendly and attentive, making sure that every guest has a wonderful dining experience. Whether you're looking for a quick bite or a full meal, this restaurant is sure to satisfy your hunger and leave you feeling satisfied.
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed cursus nibh sed mollis fringilla. Integer sed aliquet felis. Cras lobortis erat mauris, eu lacinia tortor aliquam sed. Proin blandit egestas eros vitae euismod. Nullam sodales quam suscipit eros aliquet, sed scelerisque sapien rhoncus. Vivamus id erat augue. Phasellus eu consequat ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras sem sem, gravida sed dignissim sed, facilisis sit amet mauris. Nam finibus diam elit, ac imperdiet ante aliquam at. Pellentesque convallis ligula nec augue rutrum, in tristique magna interdum.
                     </p>
                 </div>
                 <div className='slides'>

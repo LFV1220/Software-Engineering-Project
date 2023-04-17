@@ -22,6 +22,7 @@ function Register({ setSignedIn }) {
     }
 
     return (
+        <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
         <div>
             <Container>
                 <Row className="vh-100 d-flex justify-content-center align-items-center">
@@ -76,6 +77,7 @@ function Register({ setSignedIn }) {
                     </Col>
                 </Row>
             </Container>
+        </div>
         </div>
     );
 }

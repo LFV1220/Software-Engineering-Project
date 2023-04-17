@@ -36,7 +36,7 @@ function Reservations({ isSignedIn }) {
         //<div className='formInput'>
          //   <p>Test (from RESERVATIONS component) {isSignedIn}</p>
         //</div>
-        <div style={{ backgroundImage: "url('https://cdn.vox-cdn.com/thumbor/d-tz00ScByHikta5KczbqSBNx-w=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23646487/image_6483441.JPG')"}}>
+        <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
         <div class="tm-black-bg  tm-contact-form-container  ">
           <form action="" id="contact-form"  onSubmit={handleSubmit}>
             
