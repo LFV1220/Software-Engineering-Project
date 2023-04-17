@@ -11,6 +11,7 @@ import {
     MDBTypography,
 } from "mdb-react-ui-kit";
 import { CiSquareRemove } from "react-icons/ci";
+import swal from "sweetalert";
 
 export default function Cart({ cart, setCart, orders, setOrders }) {
 
@@ -68,7 +69,12 @@ export default function Cart({ cart, setCart, orders, setOrders }) {
 
         setOrders([...orders, order]);
         setCart([]); // clear the cart
-        alert("Order placed successfully!");
+        swal({
+            title: "SiteBite says",
+            text:  "Order placed successfully!",
+            icon: "success",
+            button: "Ok"
+          });
         console.log(JSON.stringify(orders));
     }
 

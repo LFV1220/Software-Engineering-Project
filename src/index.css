@@ -135,4 +135,66 @@ code {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center
 }
+
+.tm-black-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  
+}
+
+/* Contact */
+.tm-contact-text-container {
+  padding: 45px 50px;
+  margin-bottom: 20px;    
+}
+
+.tm-contact-form-container {
+  max-width: 460px;
+  padding: 40px 50px;
+  box-sizing: border-box;
+}
+
+.tm-form-group { margin-bottom: 25px; }
+
+.tm-form-control {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 0;
+  border-bottom: 1px solid white;
+}
+
+.tm-form-control::-webkit-input-placeholder { color: white; } /* Edge */  
+.tm-form-control:-ms-input-placeholder { color: white; } /* Internet Explorer 10-11 */  
+.tm-form-control::placeholder { color: white; }
+
+.tm-btn-primary {
+  color: #099;
+  background-color: white;
+  border: 0;
+  padding: 12px 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+}
+
+.tm-btn-primary:hover {
+  color: white;
+  background-color: #099;
+}
+
+.tm-align-right {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+

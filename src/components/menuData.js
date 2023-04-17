@@ -86,6 +86,14 @@ const menu = [
         img: 'https://iowagirleats.com/wp-content/uploads/2014/10/Easy-Homemade-Burrito-Bowls-iowagirleats-Featured-srgb.jpg',
         desc: `A dish that contains a bit of everything.`,
     },
+    {
+        id: 9,
+        title: 'Acai bowl',
+        category: 'breakfast',
+        price: 14,
+        img: 'https://media1.popsugar-assets.com/files/thumbor/netDKAYFGPPnchUkr_xIucs5stE/0x418:1500x1918/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/10/09/599/n/44647013/374801e15f806427be6a50.18159243_/i/easy-acai-bowl-recipes.jpg',
+        desc: `A fit way to start the day`,
+    },
 ]
 
 export default menu;
