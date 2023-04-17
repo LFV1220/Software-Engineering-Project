@@ -73,12 +73,12 @@ export default function Cart({ cart, setCart, orders, setOrders }) {
     }
 
     return (
-        <section className="h-100" style={{ backgroundColor: "#eee" }}>
+        <section className="h-100" style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
             <MDBContainer className="py-5 h-100">
                 <MDBRow className="justify-content-center align-items-center h-100">
                     <MDBCol md="10">
                         <div className="d-flex justify-content-between align-items-center mb-4">
-                            <MDBTypography tag="h3" className="fw-normal mb-0 text-black">
+                            <MDBTypography tag="h3" className="fw-normal mb-0" style={{ color: 'white' }}>
                                 Shopping Cart
                             </MDBTypography>
                         </div>
@@ -93,13 +93,13 @@ export default function Cart({ cart, setCart, orders, setOrders }) {
 
                                 <MDBCard>
                                     <MDBCardBody>
-                                        <MDBBtn className="ms-3" color="warning" block size="lg" onClick={handleCheckout}>
+                                        <MDBBtn className="ms-3"  block size="lg" onClick={handleCheckout}>
                                             Checkout
                                         </MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
                             </div>
-                            : <p>Cart is empty</p>}
+                            : <p style={{ color: 'white' }}>Cart is empty</p>}
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>

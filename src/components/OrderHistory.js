@@ -14,6 +14,7 @@ import {
 function OrderHistory({ orders }) {
     function displayOrders(orders) {
         return (
+            <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
             <div>
                 {orders.map((order, index) => (
                     <MDBCard className="rounded-3 mb-4">
@@ -34,6 +35,7 @@ function OrderHistory({ orders }) {
                         </MDBCardBody>
                     </MDBCard>
                 ))}
+            </div>
             </div>
         )
     }
@@ -68,7 +70,8 @@ function OrderHistory({ orders }) {
     }
 
     return (
-        <section className="h-100" style={{ backgroundColor: "#eee" }}>
+        <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
+        <section className="h-100" style={ {backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
             <MDBContainer className="py-5 h-100">
                 <MDBRow className="justify-content-center align-items-center h-100">
                     <MDBCol md="10">
@@ -87,6 +90,7 @@ function OrderHistory({ orders }) {
                 </MDBRow>
             </MDBContainer>
         </section>
+        </div>
     )
 }
 
