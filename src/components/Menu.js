@@ -57,7 +57,6 @@ function Menu({ isSignedIn, cart, setCart }) {
     // menu items
     function handleMenuItems(menuItems) {
         return (
-            
             <div className="card-container">
                 {menuItems.map((menuItem) => (
                     <MDBCard key={menuItem.id} className="menu-card">
@@ -77,22 +76,22 @@ function Menu({ isSignedIn, cart, setCart }) {
     }
 
     return (
-        <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
-        <section className="menu-section">
-            <div className="title">
-                <h2 style={{ color: 'white' }}>Restaurant Menu</h2>
-                <div className="underline"></div>
-            </div>
-            <div className="categories">
-                <button className="category" onClick={() => handleCategory("all")}>All</button>
-                <button className="category" onClick={() => handleCategory("breakfast")}>Breakfast</button>
-                <button className="category" onClick={() => handleCategory("lunch")}>Lunch</button>
-                <button className="category" onClick={() => handleCategory("dinner")}>Dinner</button>
-            </div>
-            <div className="menu">
-                {handleMenuItems(menuItems)}
-            </div>
-        </section>
+        <div className="all-menu">
+            <section className="menu-section">
+                <div className="title">
+                    <h2 style={{ color: 'white' }}>Restaurant Menu</h2>
+                    <div className="underline"></div>
+                </div>
+                <div className="categories">
+                    <button className="category" onClick={() => handleCategory("all")}>All</button>
+                    <button className="category" onClick={() => handleCategory("breakfast")}>Breakfast</button>
+                    <button className="category" onClick={() => handleCategory("lunch")}>Lunch</button>
+                    <button className="category" onClick={() => handleCategory("dinner")}>Dinner</button>
+                </div>
+                <div className="menu">
+                    {handleMenuItems(menuItems)}
+                </div>
+            </section>
         </div>
     )
 }

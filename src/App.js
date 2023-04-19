@@ -14,9 +14,10 @@ import Cart from './components/Cart.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import items from './components/menuData.js';
 import OrderHistory from './components/OrderHistory.js';
+import ReservationHistory from './components/ReservationHistory.js';
 
 function App() {
-  const [isSignedIn, setSignedIn] = useState(false);
+  const [isSignedIn, setSignedIn] = useState(true);
   const [user, setUser] = useState('');
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -39,12 +40,13 @@ function App() {
           <Route exact path='/' element={<Homepage />} />
 
           <Route path='/Login' element={<Login setSignedIn={setSignedIn} setUser={setUser} />} />
-          <Route path='/Register' element={<Register setSignedIn={setSignedIn} />} />
+          <Route path='/Register' element={<Register setSignedIn={setSignedIn} setUser={setUser} />} />
 
           <Route path='/OrderHistory' element={<OrderHistory orders={orders} />} />
+          <Route path='/ReservationHistory' element={<ReservationHistory reservations={reservations} />} />
 
           <Route path='/Menu' element={<Menu isSignedIn={isSignedIn} cart={cart} setCart={setCart} />} />
-          <Route path='/Reservations' element={<Reservations isSignedIn={isSignedIn} />} />
+          <Route path='/Reservations' element={<Reservations reservations={reservations} setReservations={setReservations} />} />
           <Route path='/Cart' element={<Cart cart={cart} setCart={setCart} orders={orders} setOrders={setOrders} />} />
 
         </Routes>

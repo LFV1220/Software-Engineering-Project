@@ -14,7 +14,6 @@ import {
 function OrderHistory({ orders }) {
     function displayOrders(orders) {
         return (
-            <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
             <div>
                 {orders.map((order, index) => (
                     <MDBCard className="rounded-3 mb-4">
@@ -35,7 +34,6 @@ function OrderHistory({ orders }) {
                         </MDBCardBody>
                     </MDBCard>
                 ))}
-            </div>
             </div>
         )
     }
@@ -70,26 +68,26 @@ function OrderHistory({ orders }) {
     }
 
     return (
-        <div style={{ backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
-        <section className="h-100" style={ {backgroundImage: "url('https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg')"}}>
-            <MDBContainer className="py-5 h-100">
-                <MDBRow className="justify-content-center align-items-center h-100">
-                    <MDBCol md="10">
-                        <div className="d-flex justify-content-between align-items-center mb-4">
-                            <MDBTypography tag="h3" className="fw-normal mb-0 text-black">
-                                Order History
-                            </MDBTypography>
-                        </div>
-                        {displayOrders(orders)}
-                        {orders.length == 0
-                            ? <div>
-                                <p>No recent orders have been made.</p>
+        <div className="order-history bg-image">
+            <section className="h-100">
+                <MDBContainer className="py-5 h-100">
+                    <MDBRow className="justify-content-center align-items-start h-100">
+                        <MDBCol md="10">
+                            <div className="d-flex justify-content-between align-items-start mb-4">
+                                <MDBTypography tag="h3" className="fw-normal mb-0 text-white">
+                                    Order History
+                                </MDBTypography>
                             </div>
-                            : null}
-                    </MDBCol>
-                </MDBRow>
-            </MDBContainer>
-        </section>
+                            {displayOrders(orders)}
+                            {orders.length == 0
+                                ? <div>
+                                    <p style={{ color: 'white' }}>No recent orders have been made.</p>
+                                </div>
+                                : null}
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
+            </section>
         </div>
     )
 }
