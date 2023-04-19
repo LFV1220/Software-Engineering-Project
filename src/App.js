@@ -17,7 +17,7 @@ import OrderHistory from './components/OrderHistory.js';
 import ReservationHistory from './components/ReservationHistory.js';
 
 function App() {
-  const [isSignedIn, setSignedIn] = useState(true);
+  const [isSignedIn, setSignedIn] = useState(false);
   const [user, setUser] = useState('');
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
