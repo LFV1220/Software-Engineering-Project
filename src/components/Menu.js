@@ -76,21 +76,23 @@ function Menu({ isSignedIn, cart, setCart }) {
     }
 
     return (
-        <section className="menu-section">
-            <div className="title">
-                <h2>Restaurant Menu</h2>
-                <div className="underline"></div>
-            </div>
-            <div className="categories">
-                <button className="category" onClick={() => handleCategory("all")}>All</button>
-                <button className="category" onClick={() => handleCategory("breakfast")}>Breakfast</button>
-                <button className="category" onClick={() => handleCategory("lunch")}>Lunch</button>
-                <button className="category" onClick={() => handleCategory("dinner")}>Dinner</button>
-            </div>
-            <div className="menu">
-                {handleMenuItems(menuItems)}
-            </div>
-        </section>
+        <div className="all-menu">
+            <section className="menu-section">
+                <div className="title">
+                    <h2 style={{ color: 'white' }}>Restaurant Menu</h2>
+                    <div className="underline"></div>
+                </div>
+                <div className="categories">
+                    <button className="category" onClick={() => handleCategory("all")}>All</button>
+                    <button className="category" onClick={() => handleCategory("breakfast")}>Breakfast</button>
+                    <button className="category" onClick={() => handleCategory("lunch")}>Lunch</button>
+                    <button className="category" onClick={() => handleCategory("dinner")}>Dinner</button>
+                </div>
+                <div className="menu">
+                    {handleMenuItems(menuItems)}
+                </div>
+            </section>
+        </div>
     )
 }
 

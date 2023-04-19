@@ -17,7 +17,7 @@ code {
 }
 
 .navbar {
-  background-color: green;
+  background-color: #921c1f;
   display: flex;
 
 }
@@ -32,7 +32,7 @@ code {
 
 .hero-page {
   background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .6)),
-    url("https://www.commonapp.org/static/1e1926c8853882a335b0fdff90743885/university-south-florida_1108.jpg");
+    url("https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg");
   height: 100vh;
   width: 100%;
   background-position: center center;
@@ -54,6 +54,7 @@ code {
 
 .hero-content h1 {
   font-size: 10vw;
+  letter-spacing: 2px;
 }
 
 .categories {
@@ -70,12 +71,17 @@ code {
   border-radius: 5px;
 }
 
+.all-menu {
+  background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .6)),
+    url("https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg");
+}
+
 .menu-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3rem 0;
+  padding: 3rem 0;
 }
 
 .title {
@@ -93,7 +99,8 @@ code {
   align-items: center;
   padding: 16px;
   margin: 16px;
-  height: 300px;
+  max-height: 545px;
+  min-height: 545px;
   width: 300px;
   border-radius: 8px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
@@ -102,7 +109,8 @@ code {
 
 .card-image {
   max-width: 100%;
-  height: auto;
+  min-height: 250px;
+  max-height: 250px;
   margin-bottom: 16px;
 }
 
@@ -141,29 +149,48 @@ code {
 .tm-black-bg {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  
+
 }
 
 /* Contact */
 .tm-contact-text-container {
   padding: 45px 50px;
-  margin-bottom: 20px;    
+  margin-bottom: 20px;
 }
 
 .tm-contact-form-container {
-  max-width: 460px;
+  /* max-width: 600px; */
   padding: 40px 50px;
   box-sizing: border-box;
 }
 
-.tm-form-group { margin-bottom: 25px; }
+.reservations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservations h1 {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.reservation-form {
+  min-width: 500px;
+  max-width: 750px;
+}
+
+.tm-form-group {
+  margin-bottom: 25px;
+}
 
 .tm-form-control {
   display: block;
   box-sizing: border-box;
   width: 100%;
   padding: 10px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  /* font-family: 'Open Sans', Arial, Helvetica, sans-serif; */
   font-size: 1rem;
   line-height: 1.5;
   color: #fff;
@@ -173,18 +200,28 @@ code {
   border-bottom: 1px solid white;
 }
 
-.tm-form-control::-webkit-input-placeholder { color: white; } /* Edge */  
-.tm-form-control:-ms-input-placeholder { color: white; } /* Internet Explorer 10-11 */  
-.tm-form-control::placeholder { color: white; }
+.tm-form-control::-webkit-input-placeholder {
+  color: white;
+}
+
+/* Edge */
+.tm-form-control:-ms-input-placeholder {
+  color: white;
+}
+
+/* Internet Explorer 10-11 */
+.tm-form-control::placeholder {
+  color: white;
+}
 
 .tm-btn-primary {
-  color: #099;
+  color: #921c1f;
   background-color: white;
   border: 0;
   padding: 12px 40px;
   font-size: 1.4rem;
   cursor: pointer;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .tm-btn-primary:hover {
@@ -198,3 +235,12 @@ code {
   margin-right: 0;
 }
 
+.bg-image {
+  background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .9)),
+    url("https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg");
+  height: 100vh;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

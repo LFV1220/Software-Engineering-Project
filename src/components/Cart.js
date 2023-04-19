@@ -70,45 +70,47 @@ export default function Cart({ cart, setCart, orders, setOrders }) {
         setOrders([...orders, order]);
         setCart([]); // clear the cart
         swal({
-            title: "SiteBite says",
-            text:  "Order placed successfully!",
+            title: "SiteBite",
+            text: "Order placed successfully!",
             icon: "success",
             button: "Ok"
-          });
-        console.log(JSON.stringify(orders));
+        });
     }
 
     return (
-        <section className="h-100" style={{ backgroundColor: "#eee" }}>
-            <MDBContainer className="py-5 h-100">
-                <MDBRow className="justify-content-center align-items-center h-100">
-                    <MDBCol md="10">
-                        <div className="d-flex justify-content-between align-items-center mb-4">
-                            <MDBTypography tag="h3" className="fw-normal mb-0 text-black">
-                                Shopping Cart
-                            </MDBTypography>
-                        </div>
-                        {cartItem(cart)}
-                        {cart.length > 0
-                            ? <div>
-                                <MDBCard className="mb-4">
-                                    <MDBCardBody className="p-4 d-flex flex-row">
-                                        <MDBInput label="Anything you want us to know about your order?" wrapperClass="flex-fill" size="lg" />
-                                    </MDBCardBody>
-                                </MDBCard>
-
-                                <MDBCard>
-                                    <MDBCardBody>
-                                        <MDBBtn className="ms-3" color="warning" block size="lg" onClick={handleCheckout}>
-                                            Checkout
-                                        </MDBBtn>
-                                    </MDBCardBody>
-                                </MDBCard>
+        <div className="cart bg-image">
+            <section className="h-100">
+                <MDBContainer className="py-5 h-100">
+                    <MDBRow className="justify-content-center align-items-start h-100">
+                        <MDBCol md="10">
+                            <div className="d-flex justify-content-between align-items-start mb-4">
+                                <MDBTypography tag="h3" className="fw-normal mb-0" style={{ color: 'white' }}>
+                                    Shopping Cart
+                                </MDBTypography>
                             </div>
-                            : <p>Cart is empty</p>}
-                    </MDBCol>
-                </MDBRow>
-            </MDBContainer>
-        </section>
+                            {cartItem(cart)}
+                            {cart.length > 0
+                                ? <div>
+                                    <MDBCard className="mb-4">
+                                        <MDBCardBody className="p-4 d-flex flex-row">
+                                            <MDBInput label="Anything you want us to know about your order?" wrapperClass="flex-fill" size="lg" />
+                                        </MDBCardBody>
+                                    </MDBCard>
+
+                                    <MDBCard>
+                                        <MDBCardBody>
+                                            <MDBBtn block size="lg" onClick={handleCheckout}>
+                                                Checkout
+                                            </MDBBtn>
+                                        </MDBCardBody>
+                                    </MDBCard>
+                                </div>
+                                : <p style={{ color: 'white' }}>Cart is empty</p>}
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
+            </section>
+        </div>
+
     );
 }

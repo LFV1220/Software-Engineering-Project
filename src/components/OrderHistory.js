@@ -68,25 +68,27 @@ function OrderHistory({ orders }) {
     }
 
     return (
-        <section className="h-100" style={{ backgroundColor: "#eee" }}>
-            <MDBContainer className="py-5 h-100">
-                <MDBRow className="justify-content-center align-items-center h-100">
-                    <MDBCol md="10">
-                        <div className="d-flex justify-content-between align-items-center mb-4">
-                            <MDBTypography tag="h3" className="fw-normal mb-0 text-black">
-                                Order History
-                            </MDBTypography>
-                        </div>
-                        {displayOrders(orders)}
-                        {orders.length == 0
-                            ? <div>
-                                <p>No recent orders have been made.</p>
+        <div className="order-history bg-image">
+            <section className="h-100">
+                <MDBContainer className="py-5 h-100">
+                    <MDBRow className="justify-content-center align-items-start h-100">
+                        <MDBCol md="10">
+                            <div className="d-flex justify-content-between align-items-start mb-4">
+                                <MDBTypography tag="h3" className="fw-normal mb-0 text-white">
+                                    Order History
+                                </MDBTypography>
                             </div>
-                            : null}
-                    </MDBCol>
-                </MDBRow>
-            </MDBContainer>
-        </section>
+                            {displayOrders(orders)}
+                            {orders.length == 0
+                                ? <div>
+                                    <p style={{ color: 'white' }}>No recent orders have been made.</p>
+                                </div>
+                                : null}
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
+            </section>
+        </div>
     )
 }
 
