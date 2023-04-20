@@ -16,7 +16,7 @@ function OrderHistory({ orders }) {
         return (
             <div>
                 {orders.map((order, index) => (
-                    <MDBCard className="rounded-3 mb-4">
+                    <MDBCard key={index} className="rounded-3 mb-4">
                         <MDBCardBody className="p-4">
                             <MDBRow className="justify-content-between align-items-center">
                                 <MDBCol md="3" lg="3" xl="3">
@@ -42,7 +42,7 @@ function OrderHistory({ orders }) {
         return (
             <div>
                 {order.items.map((item, index) => (
-                    <div>
+                    <div key={index}>
                         <hr />
                         <MDBRow>
                             <MDBCol md="2" lg="2" xl="2">

@@ -13,7 +13,7 @@ code {
 }
 
 .app {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .navbar {
@@ -238,9 +238,10 @@ code {
 .bg-image {
   background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .9)),
     url("https://w.forfun.com/fetch/e4/e43c51861269e935ced53777773e8e4c.jpeg");
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-y: auto;
 }
